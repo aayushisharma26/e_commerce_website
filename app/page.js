@@ -1,13 +1,12 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Electronics from './electronics/page';
-function page() {
+import  Electronics_data from './mobile_data';
+
+function Page() {
   return (
     <div>
-      <Electronics/>
-      <jewellery/>
     </div>
   )
 }
 
-export default page
+export default Page;
