@@ -28,6 +28,13 @@
 
 
 "use client"
+
+
+
+
+
+
+
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -50,29 +57,32 @@ function Page() {
   }, []);
 
   const renderCategoryRow = (categoryData) => (
-    <div style={{border:'4px solid red'}}>
+    <div className="row">
       {categoryData.slice(0, 4).map((item, index) => (
-        <div style={{border:'4px solid red'}} key={index}>
-          {/* <h1>{item.title}</h1> */}
-          <img src={item.image} alt={item.title} className="img-fluid" />
+        <div className="col-md-3" key={index}>
+          <div style={{ border: '1px solid red', padding: '10px', marginBottom: '10px' }}>
+            {/* <h1>{item.title}</h1> */}
+            <img src={item.image} alt={item.title} className="img-fluid" style={{ border: '1px solid red', width: "10%" }} />
+          </div>
         </div>
       ))}
     </div>
   );
 
-  const electronicData = data.filter((item) => item.category === "electronics");
-  const jeweleryData = data.filter((item) => item.category === "jewelery");
-  const womensData = data.filter((item) => item.category === "women's clothing");
+  const electronicData = data.filter((item) => item.category === "electronics").slice(0, 4);
+  const jeweleryData = data.filter((item) => item.category === "jewelery").slice(0, 4);
+  const womensData = data.filter((item) => item.category === "women's clothing").slice(0, 4);
 
   return (
-    <>
-      {renderCategoryRow(electronicData)}
-      {renderCategoryRow(jeweleryData)}
-      {renderCategoryRow(womensData)}
-    </>
+    <div className="container">
+      <div className="row">
+        {renderCategoryRow(electronicData)}
+        {renderCategoryRow(jeweleryData)}
+        {renderCategoryRow(womensData)}
+      </div>
+    </div>
   );
 }
 
 export default Page;
-
 
