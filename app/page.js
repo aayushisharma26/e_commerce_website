@@ -1,90 +1,42 @@
-<<<<<<< HEAD
-// "use client"
-// import React from 'react'
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import  Electronics_data from './product_data';
-// import  ProductDetail from './product_detail';
-
-// function Page() {
-//   return (
-//     <div>
-//       < Electronics_data/>
-//       <ProductDetail/>
-
-
-
-//     </div>
-//   )
-// }
-
-// export default Page;
-
-
-
-
-
-
-
-
-
-
-
 "use client"
-
-
-=======
-"use client"
->>>>>>> 852e23656377756282b869b25dba432ad5425ebd
-
-import React, { useState, useEffect } from 'react';
+import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import  Electronics_data from './product_data';
+import  ProductDetail from './product_detail';
 
 function Page() {
-  const [data, setData] = useState([]);
-
-  const fetchData = () => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((res) => {
-        setData(res);
-      })
-      .catch((error) => {
-        console.error("Fetch error:", error);
-      });
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const renderCategoryRow = (categoryData) => (
-    <div style={{height:'1000px',border:'solid 2px black', width:'100%'}}>
-      {categoryData.slice(0, 4).map((item) => (
-        <div key={item.id}>
-          <div style={{ border: '1px solid red', padding: '10px', marginBottom: '10px' }}>
-            {/* <p>{item.title}</p> */}
-            <img src={item.image} alt={item.title} className="img-fluid" style={{ border: '1px solid red', width: "10%" }} />
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-
-  const electronicData = data.filter((item) => item.category === "electronics");
-  const jewelryData = data.filter((item) => item.category === "jewelery");
-  const womensData = data.filter((item) => item.category === "women's clothing");
-
+ 
   return (
     <>
-      {renderCategoryRow(electronicData)}
-      {renderCategoryRow(jewelryData)}
-      {renderCategoryRow(womensData)}
+       < Electronics_data/>
+      <ProductDetail/>
+      <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img src="https://media.istockphoto.com/id/1328836875/vector/realistic-electronic-devices-and-gadgets-in-isometry-vector-isometric-illustration-of.jpg?s=1024x1024&w=is&k=20&c=2POD6qi_onFpGkrDtE5z-Y_ViSuPp5hhszFQ8w44FrA="
+              className="d-block w-100" alt="First slide" style={{ height: '300px', width: "500px" }} />
+          </div>
+          <div className="carousel-item">
+            <img src="https://www.hunarcourses.com/blog/wp-content/uploads/2021/01/bridal-jewellery-1-1024x1024.jpg"
+              className="d-block w-100" alt="Second slide" style={{ height: '300px', width: "500px" }} />
+          </div>
+          <div className="carousel-item">
+            <img src="https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630"
+              className="d-block w-100" alt="Third slide" style={{ height: '300px', width: "500px" }} />
+          </div>
+        </div>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+     
     </>
   );
 }
 
 export default Page;
-<<<<<<< HEAD
 
 
 
@@ -98,5 +50,3 @@ export default Page;
 
 
 
-=======
->>>>>>> 852e23656377756282b869b25dba432ad5425ebd
