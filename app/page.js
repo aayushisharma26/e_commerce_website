@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // "use client"
 // import React from 'react'
 // import 'bootstrap/dist/css/bootstrap.min.css';
@@ -31,6 +32,9 @@
 "use client"
 
 
+=======
+"use client"
+>>>>>>> 852e23656377756282b869b25dba432ad5425ebd
 
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -54,9 +58,9 @@ function Page() {
   }, []);
 
   const renderCategoryRow = (categoryData) => (
-    <div className="row">
+    <div style={{height:'1000px',border:'solid 2px black', width:'100%'}}>
       {categoryData.slice(0, 4).map((item) => (
-        <div className="col-md-3" key={item.id}>
+        <div key={item.id}>
           <div style={{ border: '1px solid red', padding: '10px', marginBottom: '10px' }}>
             {/* <p>{item.title}</p> */}
             <img src={item.image} alt={item.title} className="img-fluid" style={{ border: '1px solid red', width: "10%" }} />
@@ -80,6 +84,7 @@ function Page() {
 }
 
 export default Page;
+<<<<<<< HEAD
 
 
 
@@ -93,3 +98,5 @@ export default Page;
 
 
 
+=======
+>>>>>>> 852e23656377756282b869b25dba432ad5425ebd

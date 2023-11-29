@@ -26,4 +26,8 @@ function Navbar2() {
   );
 }
 
+<<<<<<< HEAD
 export default Navbar2;
+=======
+export default Navbar2;
+>>>>>>> 852e23656377756282b869b25dba432ad5425ebd
