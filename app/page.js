@@ -226,6 +226,8 @@ function Page() {
     return (
       <>
         <Cursal />
+        
+        
         {Object.keys(categories).map((category) => (
           <div key={category} className="row mb-4" style={{ border: '1px solid black', borderRadius: '8px' }}>
             {categories[category].map((item) => (
