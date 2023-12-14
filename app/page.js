@@ -1,10 +1,10 @@
-// "use client"
-// import React from 'react'
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import  Electronics_data from './product_data';
-// import  ProductDetail from './product_detail';
+"use client"
+import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import  Electronics_data from './product_data';
+import  ProductDetail from './product_detail';
 
-// function Page() {
+function Page() {
  
 //   return (
 //     <>
@@ -27,16 +27,16 @@
 //         </div>
 //       </div>
 
-//       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 
 
      
-//     </>
-//   );
-// }
+    </>
+  );
+}
 
-// export default Page;
+export default Page;
 
 
 
@@ -66,6 +66,48 @@ function Page() {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const renderCategoryRows = () => {
+    const categories = {
+      electronics: data.filter((item) => item.category === "electronics").slice(0, 4),
+      jewelry: data.filter((item) => item.category === "jewelery").slice(0, 4),
+      womensClothing: data.filter((item) => item.category === "women's clothing").slice(0, 4),
+    };
+
+    return (
+      <>
+        <Cursal />
+        
+        
+        {Object.keys(categories).map((category) => (
+          <div key={category} className="row mb-4" style={{ border: '1px solid black', borderRadius: '8px' }}>
+            {categories[category].map((item) => (
+              <div key={item.id} className="col-md-3 mb-4">
+                <div style={{ borderRadius: '8px', border: '1px solid black' }}>
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    style={{ width: '350px', height: '300px', borderRadius: '8px' }}
+                  />
+                  <div className="p-3">
+                    <h6>{item.title}</h6>
+                    <p>Price: ${item.price}</p>
+                    <p>ID: {item.id}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        ))}
+      </>
+    );
+  };
+
+  return <>{renderCategoryRows()}</>;
+}
+
+export default Page;
+
 
   const renderCategoryRows = () => {
     const categories = {
