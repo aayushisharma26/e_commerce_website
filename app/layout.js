@@ -4,6 +4,7 @@ import Navbar1 from './navbar1'
 import Navbar2 from './navbar2'
 import Link from 'next/link'
 import Footer from './footer'
+// import Product_list from './product_list/page'
 
 const inter = Inter({ subsets: ['latin'] })
 
