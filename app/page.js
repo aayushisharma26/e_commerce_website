@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import View from './view';
+
 
 
 function Page() {
@@ -79,12 +79,7 @@ function Page() {
                 </div>
               </div>
             ))}
-            <View/>
-            
-
-
-            
-          
+            <a href="./product_list" className="  btn btn-primary float-end  col-2 "  >Viwe All</a>
 
 
           </div>
@@ -94,10 +89,6 @@ function Page() {
       </>
     );
   };
-
   return <>{renderCategoryRows()}</>;
 }
-
 export default Page;
-
-
