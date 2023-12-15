@@ -26,7 +26,12 @@ function Navbar1() {
           <div className="navbar-brand" aria-current="page">
           <Link href="/womans_cloths" style={{ color: 'black' }}>Womans_Cloths</Link>
           </div>
+
         </div>
+
+
+
+
 
         <div className="d-flex">
           <form className="d-flex">
