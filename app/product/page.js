@@ -4,11 +4,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import React from 'react'
 
-function Product_list() {
+function Product() {
   return (
-    <div> Product_list</div>
+    <div> Product</div>
   )
 }
 
-export default Product_list
+export default Product
 
