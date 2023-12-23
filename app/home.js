@@ -160,6 +160,7 @@ function Home() {
             <Link href={`/product_list/${category}`}>
               <p className="btn btn-primary float-end col-2">View All</p>
             </Link>
+            {/* <a href="./product_list" className="  btn btn-primary float-end  col-2 "  >Viwe All</a> */}
           </div>
         ))}
       </>
