@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 function Page({ params }) {
   const [productDetails, setProductDetails] = useState(null);
 
@@ -11,9 +12,6 @@ function Page({ params }) {
       .then((res) => {
         setProductDetails(res);
       })
-      .catch((error) => {
-        console.error("Fetch error:", error);
-      });
   };
 
   useEffect(() => {
@@ -25,7 +23,7 @@ function Page({ params }) {
   }
 
   return (
-    <div>
+    <div style={{border:"solid 2px red"}}>
     <h1>Product_list</h1>
     <img
         src={productDetails.image}
