@@ -1,8 +1,6 @@
-
 "use client";
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 function Page({ params }) {
   const [productDetails, setProductDetails] = useState(null);
@@ -13,6 +11,9 @@ function Page({ params }) {
       .then((res) => {
         setProductDetails(res);
       })
+      .catch((error) => {
+        console.error("Fetch error:", error);
+      });
   };
 
   useEffect(() => {
@@ -24,23 +25,16 @@ function Page({ params }) {
   }
 
   return (
-    <div style={{border:"solid 2px red"}}>
-    <h1>Product_list</h1>
-    <img
+    <div style={{ border: "solid 2px red" }}>
+      <h1>Product Details</h1>
+      <img
         src={productDetails.image}
         style={{ width: '350px', height: '300px', borderRadius: '8px' }}
-    />
-    <p>Product ID: {productDetails.id}</p>
-    <p>Title: {productDetails.title}</p>
-      
+      />
+      <p>Product ID: {productDetails.id}</p>
+      <p>Title: {productDetails.title}</p>
     </div>
   );
 }
 
 export default Page;
-
-
-
-    
-  
-

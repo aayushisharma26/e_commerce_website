@@ -1,4 +1,12 @@
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// export default function Page({ params }){
+//     return <div>My Post: {params.category}</div>
+// }
+
+
+
 // pages/product_list/[category].js
+"use client"
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
