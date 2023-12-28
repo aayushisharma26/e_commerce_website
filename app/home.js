@@ -1,7 +1,6 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import Link from 'next/link';
 
 function Home() {
@@ -30,7 +29,6 @@ function Home() {
     };
 
     return (
-
       <>
         <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
           <div className="carousel-inner">
@@ -80,9 +78,8 @@ function Home() {
               </div>
             ))}
             <Link href={`/product_list/${category}`}>
-              <p className="btn btn-primary float-end col-2">View All</p>
+              View All
             </Link>
-
           </div>
         ))}
       </>
@@ -93,3 +90,4 @@ function Home() {
 }
 
 export default Home;
+
