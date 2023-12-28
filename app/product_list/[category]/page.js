@@ -1,6 +1,34 @@
 "use client"
-import { useState,useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+const Sidebar = ({ handleFilterChange, handleSortChange, getCategoryOptions, getPriceRangeOptions }) => (
+  <div className="sidebar">
+    <label>
+      Category:
+      <select className="form-control" onChange={(e) => handleFilterChange('category', e.target.value)}>
+        {getCategoryOptions().map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+    </label>
+
+    <label>
+      Price Range:
+      <select className="form-control" onChange={(e) => handleFilterChange('priceRange', e.target.value)}>
+        {getPriceRangeOptions().map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+    </label>
+
+    <button className="btn btn-primary" onClick={handleSortChange}>Sort Price</button>
+  </div>
+);
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -9,6 +37,7 @@ const ProductList = () => {
     category: '',
     priceRange: '',
   });
+  const [sortOrder, setSortOrder] = useState('asc');
   const [filterMessage, setFilterMessage] = useState('');
 
   useEffect(() => {
@@ -40,6 +69,10 @@ const ProductList = () => {
     }
   };
 
+  const handleSortChange = () => {
+    setSortOrder((prevSortOrder) => (prevSortOrder === 'asc' ? 'desc' : 'asc'));
+  };
+
   useEffect(() => {
     let filtered = products;
 
@@ -54,6 +87,12 @@ const ProductList = () => {
       );
     }
 
+    filtered.sort((a, b) => {
+      const priceA = a.price;
+      const priceB = b.price;
+      return sortOrder === 'asc' ? priceA - priceB : priceB - priceA;
+    });
+
     setFilteredProducts(filtered);
 
     if (filtered.length === 0) {
@@ -61,7 +100,7 @@ const ProductList = () => {
     } else {
       setFilterMessage('');
     }
-  }, [selectedFilters, products]);
+  }, [selectedFilters, products, sortOrder]);
 
   const getCategoryOptions = () => {
     const categories = [...new Set(filteredProducts.map((product) => product.category))];
@@ -81,48 +120,37 @@ const ProductList = () => {
   };
 
   return (
-    <div>
-      <div>
-        <label>
-          Category:
-          <select onChange={(e) => handleFilterChange('category', e.target.value)}>
-            {getCategoryOptions().map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-        </label>
-
-        <label>
-          Price Range:
-          <select onChange={(e) => handleFilterChange('priceRange', e.target.value)}>
-            {getPriceRangeOptions().map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-        </label>
-      </div>
-      {filterMessage && <p>{filterMessage}</p>}
+    <div className="container mt-3">
       <div className="row">
-        {filteredProducts.map((product) => (
-          <div key={product.id} className="col-md-3 mb-4">
-            <div style={{ borderRadius: '8px', border: '1px solid black' }}>
-              <img
-                src={product.image}
-                alt={product.title}
-                style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px 8px 0 0' }}
-              />
-              <div className="p-3">
-                <h6>{product.title}</h6>
-                <p>Category: {product.category}</p>
-                <p>Price: ${product.price}</p>
+        <div className="col-md-3">
+          <Sidebar
+            handleFilterChange={handleFilterChange}
+            handleSortChange={handleSortChange}
+            getCategoryOptions={getCategoryOptions}
+            getPriceRangeOptions={getPriceRangeOptions}
+          />
+        </div>
+        <div className="col-md-9">
+          {filterMessage && <p className="alert alert-warning">{filterMessage}</p>}
+          <div className="row">
+            {filteredProducts.map((product) => (
+              <div key={product.id} className="col-md-3 mb-4">
+                <div className="card">
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="card-img-top"
+                  />
+                  <div className="card-body">
+                    <h6 className="card-title">{product.title}</h6>
+                    <p className="card-text">Category: {product.category}</p>
+                    <p className="card-text">Price: ${product.price}</p>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );
