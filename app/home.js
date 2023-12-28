@@ -1,8 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
+import Link from 'next/link';
 
 function Home() {
   const [data, setData] = useState([]);
@@ -30,7 +29,6 @@ function Home() {
     };
 
     return (
-      
       <>
         <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
           <div className="carousel-inner">
@@ -79,9 +77,9 @@ function Home() {
                 </div>
               </div>
             ))}
-            <a href="./product_list" className="  btn btn-primary float-end  col-2 "  >Viwe All</a>
-
-
+            <Link href={`/product_list/${category}`}>
+              View All
+            </Link>
           </div>
         ))}
       </>
@@ -92,85 +90,4 @@ function Home() {
 }
 
 export default Home;
-
-
-
-// import React, { useState, useEffect } from 'react';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import Link from 'next/link';
-
-// function Home() {
-//   const [data, setData] = useState([]);
-
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       try {
-//         const response = await fetch('https://fakestoreapi.com/products');
-//         const data = await response.json();
-//         setData(data);
-//       } catch (error) {
-//         console.error('Fetch error:', error);
-//       }
-//     };
-
-//     fetchData();
-//   }, []);
-
-//   const handleViewAll = (category) => (
-//     <Link href={`/product_list?category=${encodeURIComponent(category)}`}>
-//       View All {category}
-//     </Link>
-//   );
-
-//   const renderCategoryRows = () => {
-//     if (!data.length) {
-//       return <div>Loading...</div>;
-//     }
-
-//     const categories = {
-//       electronics: data.filter((item) => item.category === 'electronics').slice(0, 4),
-//       jewelry: data.filter((item) => item.category === 'jewelery').slice(0, 4),
-//       womensClothing: data.filter((item) => item.category === "women's clothing").slice(0, 4),
-//     };
-
-//     return (
-//       <>
-//         {Object.keys(categories).map((category) => (
-//           <div
-//             key={category}
-//             className="row mb-4"
-//             style={{ border: '1px solid black', borderRadius: '8px' }}
-//           >
-//             {categories[category].map((item) => (
-//               <div key={item.id} className="col-md-3 mb-4">
-//                 <div style={{ borderRadius: '8px', border: '1px solid black' }}>
-//                   <img
-//                     src={item.image}
-//                     alt={item.title}
-//                     style={{ width: '350px', height: '300px', borderRadius: '8px' }}
-//                   />
-//                   <div className="p-3">
-//                     <h6>{item.title}</h6>
-//                     <p>Price: ${item.price}</p>
-//                     <p>ID: {item.id}</p>
-//                   </div>
-//                 </div>
-//               </div>
-//             ))}
-//             {handleViewAll(category)}
-//           </div>
-//         ))}
-//       </>
-//     );
-//   };
-
-//   return <>{renderCategoryRows()}</>;
-// }
-
-// export default Home;
-
-
-
-
-
 

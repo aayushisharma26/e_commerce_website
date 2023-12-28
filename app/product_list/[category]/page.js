@@ -2,52 +2,130 @@
 import { useState,useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+const ProductList = () => {
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [selectedFilters, setSelectedFilters] = useState({
+    category: '',
+    priceRange: '',
+  });
+  const [filterMessage, setFilterMessage] = useState('');
 
-function Page({ params }) {
-  const { category } = params;
-  const [categoryData, setCategoryData] = useState([]);
-
-  const fetchCategoryData = () => {
-    fetch('https://fakestoreapi.com/products')
-      .then((res) => res.json())
-      .then((data) => {
-        // Filter products based on the specified category
-        const filteredData = data.filter((item) => item.category.toLowerCase() === category.toLowerCase());
-        setCategoryData(filteredData);
-      })
-      .catch((error) => {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://fakestoreapi.com/products");
+        const data = await response.json();
+        setProducts(data);
+        setFilteredProducts(data);
+      } catch (error) {
         console.error("Fetch error:", error);
-      });
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const handleFilterChange = (filterType, value) => {
+    if (value === 'All') {
+      setSelectedFilters((prevFilters) => ({
+        ...prevFilters,
+        [filterType]: '',
+      }));
+    } else {
+      setSelectedFilters((prevFilters) => ({
+        ...prevFilters,
+        [filterType]: value,
+      }));
+    }
   };
 
   useEffect(() => {
-    fetchCategoryData();
-  }, [category]);
+    let filtered = products;
 
-  if (!categoryData.length) {
-    return <div>Loading...</div>;
-  }
+    if (selectedFilters.category) {
+      filtered = filtered.filter((product) => product.category === selectedFilters.category);
+    }
+
+    if (selectedFilters.priceRange) {
+      const [minPrice, maxPrice] = selectedFilters.priceRange.split('-');
+      filtered = filtered.filter(
+        (product) => product.price >= parseInt(minPrice) && product.price <= parseInt(maxPrice)
+      );
+    }
+
+    setFilteredProducts(filtered);
+
+    if (filtered.length === 0) {
+      setFilterMessage('No products match the selected criteria.');
+    } else {
+      setFilterMessage('');
+    }
+  }, [selectedFilters, products]);
+
+  const getCategoryOptions = () => {
+    const categories = [...new Set(filteredProducts.map((product) => product.category))];
+    return ['All', ...categories];
+  };
+
+  const getPriceRangeOptions = () => {
+    const prices = [...new Set(filteredProducts.map((product) => product.price))];
+    const options = ['All'];
+
+    for (let i = 0; i <= Math.max(...prices); i += 10) {
+      const range = `${i}-${i + 10}`;
+      options.push(range);
+    }
+
+    return options;
+  };
 
   return (
     <div>
-      <h1>{category} Products</h1>
-      {categoryData.map((item) => (
-        <div key={item.id}>
-          <img
-            src={item.image}
-            style={{ width: '100px', height: '100px', borderRadius: '8px' }}
-            alt={item.title}
-          />
-          <p>Product ID: {item.id}</p>
-          <p>Title: {item.title}</p>
-        </div>
-      ))}
+      <div>
+        <label>
+          Category:
+          <select onChange={(e) => handleFilterChange('category', e.target.value)}>
+            {getCategoryOptions().map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <label>
+          Price Range:
+          <select onChange={(e) => handleFilterChange('priceRange', e.target.value)}>
+            {getPriceRangeOptions().map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
+      {filterMessage && <p>{filterMessage}</p>}
+      <div className="row">
+        {filteredProducts.map((product) => (
+          <div key={product.id} className="col-md-3 mb-4">
+            <div style={{ borderRadius: '8px', border: '1px solid black' }}>
+              <img
+                src={product.image}
+                alt={product.title}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px 8px 0 0' }}
+              />
+              <div className="p-3">
+                <h6>{product.title}</h6>
+                <p>Category: {product.category}</p>
+                <p>Price: ${product.price}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
-}
+};
 
-export default Page;
-
-  
-  
-  
+export default ProductList;
