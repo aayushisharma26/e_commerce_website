@@ -1,3 +1,11 @@
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// export default function Page({ params }){
+//     return <div>My Post: {params.category}</div>
+// }
+
+
+
+// pages/product_list/[category].js
 "use client"
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -80,7 +88,7 @@ const ProductList = () => {
       filtered = filtered.filter((product) => product.category === selectedFilters.category);
     }
 
-    if (selectedFilters.priceRange) {
+    if (selectedFilters.priceRange && selectedFilters.priceRange !== 'All') {
       const [minPrice, maxPrice] = selectedFilters.priceRange.split('-');
       filtered = filtered.filter(
         (product) => product.price >= parseInt(minPrice) && product.price <= parseInt(maxPrice)
@@ -103,12 +111,12 @@ const ProductList = () => {
   }, [selectedFilters, products, sortOrder]);
 
   const getCategoryOptions = () => {
-    const categories = [...new Set(filteredProducts.map((product) => product.category))];
+    const categories = [...new Set(products.map((product) => product.category))];
     return ['All', ...categories];
   };
 
   const getPriceRangeOptions = () => {
-    const prices = [...new Set(filteredProducts.map((product) => product.price))];
+    const prices = [...new Set(products.map((product) => product.price))];
     const options = ['All'];
 
     for (let i = 0; i <= Math.max(...prices); i += 10) {
