@@ -37,7 +37,16 @@ function Home() {
             {categories[category].map((item) => (
               <div key={item.id} className="col-md-3 mb-4">
                 <div style={{ borderRadius: '8px', border: '1px solid black' }}>
-                  <Link href={`/product_list/${category}/${item.id}`}>
+                <Link href={`/product_list/${category}`} passHref>
+                    {/* <a> */}
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        style={{ width: '350px', height: '300px', borderRadius: '8px' }}
+                      />
+                    {/* </a> */}
+                  </Link>
+                  {/* <Link href={`/product_list/${category}`}>
                     
                       <img
                         src={item.image}
@@ -45,7 +54,7 @@ function Home() {
                         style={{ width: '350px', height: '300px', borderRadius: '8px' }}
                       />
                     
-                  </Link>
+                  </Link> */}
                   <div className="p-3">
                     <h6>{item.title}</h6>
                     <p>Price: ${item.price}</p>
