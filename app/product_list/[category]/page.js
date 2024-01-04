@@ -87,6 +87,7 @@ export default function ProductList({ params }) {
                   <Link href={`/product/${product.id}`} passHref>
                     {/* <a> */}
                       <img src={product.image} alt={product.title} style={{ width: '100px', height: '100px' }} />
+                      
                     {/* </a> */}
                   </Link>
                   <div className="p-3">
@@ -103,3 +104,13 @@ export default function ProductList({ params }) {
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+

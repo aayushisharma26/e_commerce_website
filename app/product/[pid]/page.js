@@ -1,11 +1,9 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { useRouter } from 'next/router';
+import Cookies from 'js-cookie';
 
 function Page({ params }) {
-    // const router = useRouter();
-    // const { pid } = router.query;
   
   const [productDetails, setProductDetails] = useState(null);
 
@@ -28,6 +26,14 @@ function Page({ params }) {
     return <div>Loading...</div>;
   }
 
+
+
+  const addCart=()=>{
+    // Cookies.set("alima","usmani")
+    // Cookies.set(productDetails,true)
+    Cookies.set(`product_${productDetails.id}`, JSON.stringify(productDetails));
+
+  }
   return (
     <div style={{ border: "solid 2px red" }}>
       <h1>Product Details-</h1>
@@ -37,8 +43,16 @@ function Page({ params }) {
       />
       <p>Product ID: {productDetails.id}</p>
       <p>Title: {productDetails.title}</p>
+      <button  className="btn btn-success" onClick={()=>addCart(productDetails)}>ADD TO CART</button>
+      <button  className="btn btn-success" >BUT NOW</button>
+
+
     </div>
   );
 }
 
 export default Page;
+
+
+
+
