@@ -83,10 +83,10 @@ export default function ProductList({ params }) {
           <div className="row">
             {categoryProducts.map((product) => (
               <div key={product.id} className="col-md-3 mb-4">
-                <div style={{ borderRadius: '8px', border: '1px solid black' }}>
+                <div style={{ height:'500px', borderRadius: '8px', border: '1px solid black' }}>
                   <Link href={`/product/${product.id}`} passHref>
                     {/* <a> */}
-                      <img src={product.image} alt={product.title} style={{ width: '100px', height: '100px' }} />
+                      <img src={product.image} alt={product.title} style={{ width: '300px', height: '300px' }} />
                       
                     {/* </a> */}
                   </Link>

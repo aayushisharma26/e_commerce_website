@@ -33,14 +33,14 @@ function Home() {
         {Object.keys(categories).map((category) => (
           <div key={category} className="row mb-4" style={{ border: '1px solid black', borderRadius: '8px' }}>
             {categories[category].map((item) => (
-              <div key={item.id} className="col-md-3 mb-4">
-                <div style={{ borderRadius: '8px', border: '1px solid black' }}>
+              <div key={item.id} className="col-md-3 mb-4 "  >
+                <div style={{ height: '560px', borderRadius: '8px', border: '1px solid black' }}>
                 <Link href={`/product_list/${category}`} passHref>
                     {/* <a> */}
                       <img
                         src={item.image}
                         alt={item.title}
-                        style={{ width: '350px', height: '300px', borderRadius: '8px' }}
+                        style={{ width: '350px', height: '350px', borderRadius: '8px' }}
                       />
                     {/* </a> */}
                   </Link>

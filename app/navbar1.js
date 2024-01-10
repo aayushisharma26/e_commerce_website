@@ -6,7 +6,8 @@ function Navbar1() {
       <div className="container-fluid" style={{ height: "60px" }}>
         <div className="d-flex align-items-center">
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTws27MDkRYwBLQf2llMfC3eSvjQ3WF8C6fNw&usqp=CAU"
+            src="https://img.freepik.com/premium-psd/3d-rendering-small-letter-e-with-modern-style_446595-7218.jpg?w=2000"
+            // src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTws27MDkRYwBLQf2llMfC3eSvjQ3WF8C6fNw&usqp=CAU"
             alt="Logo"
             style={{ width: "50px", height: "50px" ,marginLeft:"20px"}}
           />
