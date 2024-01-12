@@ -77,7 +77,7 @@ export default function ProductList({ params }) {
           </button>
         </nav>
 
-        {/* Main content */}
+        
         <main role="main" className="col-md-9 ml-sm-auto col-lg-9">
           <h1>Product List - {params.category}</h1>
           <div className="row">
@@ -85,10 +85,10 @@ export default function ProductList({ params }) {
               <div key={product.id} className="col-md-3 mb-4">
                 <div style={{ borderRadius: '8px', border: '1px solid black' }}>
                   <Link href={`/product/${product.id}`} passHref>
-                    {/* <a> */}
+                    
                       <img src={product.image} alt={product.title} style={{ width: '100px', height: '100px' }} />
                       
-                    {/* </a> */}
+                    
                   </Link>
                   <div className="p-3">
                     <h6>{product.title}</h6>
