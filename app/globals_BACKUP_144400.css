@@ -1,0 +1,28 @@
+<<<<<<< HEAD
+.hover-opacity:hover {
+    opacity: 0.8; 
+
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: border-color 0.3s ease-in-out;
+}
+
+
+.elec{
+    border-bottom: solid 2px red;
+    display: 'flex';
+    margin: '20px';
+    border-top: '1px solid red';
+    border-radius: '8px';
+    overflow: 'hidden';
+    
+
+}
+
+
+=======
+.logo{
+    margin-left: 0px;
+}
+>>>>>>> aef8e544362ee77013916c224b488f82a9c26bc7
