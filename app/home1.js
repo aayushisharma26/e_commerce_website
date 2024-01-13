@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'next/link';
-
+import Cursal from './carousel'
 function Home() {
   const [data, setData] = useState([]);
 
@@ -29,7 +29,7 @@ function Home() {
 
     return (
       <>
-        {/* ... (your existing code) ... */}
+        <Cursal/>
         {Object.keys(categories).map((category) => (
           <div key={category} className="row mb-4" style={{ border: '1px solid black', borderRadius: '8px' }}>
             {categories[category].map((item) => (

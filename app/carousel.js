@@ -44,38 +44,38 @@ function Cursal() {
   return (
     <>
       <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
-        <div className="carousel-inner" style={{ border: 'solid 3px black' }}>
-          <div className="carousel-item active" style={{height:"400px"}}>
+        <div className="carousel-inner" style={{ border: 'solid 1px black' }}>
+          <div className="carousel-item active" style={{height:"488px",width: '1200'}}>
             <img
-              src="https://media.istockphoto.com/id/1328836875/vector/realistic-electronic-devices-and-gadgets-in-isometry-vector-isometric-illustration-of.jpg?s=1024x1024&w=is&k=20&c=2POD6qi_onFpGkrDtE5z-Y_ViSuPp5hhszFQ8w44FrA="
+              src="https://cdn11.bigcommerce.com/s-5pywdu4iq7/images/stencil/original/carousel/409/mens_winter_sale_carousel.png?c=2"
               className="d-block w-100 img-fluid"
               alt="First slide"
-              style={{ height: '500px' }}
+              style={{ height: '488px' }}
             />
           </div>
-          <div className="carousel-item" style={{height:"400px"}}>
+          <div className="carousel-item" style={{height:"488px",width: '1200'}}>
             <img
-              src="https://i.ytimg.com/vi/z5knyvUvd_E/sddefault.jpg"
+              src="https://i.pinimg.com/originals/a8/e4/22/a8e422092e51a105cb09e09d80a7ce72.jpg"
               className="d-block w-100 img-fluid"
               alt="Second slide"
-              style={{ height: '500px' }}
+              style={{ height: '488px' }}
             />
           </div>
-          <div className="carousel-item" style={{height:"400px"}}>
+          <div className="carousel-item" style={{height:"488px",width: '1200'}}>
             <img
               src="https://images.meesho.com/images/products/243061609/09ibc_512.webp"
               className="d-block w-100 img-fluid"
               alt="Third slide"
-              style={{ height: '500px' }}
+              style={{ height: '488px' }}
             />
           </div>
 
-          <div className="carousel-item" style={{height:"400px"}}>
+          <div className="carousel-item" style={{height:"488px",width: '1200'}}>
             <img
-              src="https://res.cloudinary.com/blingvine1/image/fetch/w_1200,h_628,c_pad,b_auto/http://blingvine.com/cdn/shop/articles/25-nature-inspired-jewellery-designs-for-spring-2021-215773_84ec3628-a16c-40c2-8010-6d34d48b17a0.jpg?v=1636561610"
+              src="https://www.sliderrevolution.com/wp-content/uploads/2023/03/websites-with-carousels.jpg"
               className="d-block w-100 img-fluid"
               alt="Third slide"
-              style={{ height: '500px' }}
+              style={{ height: '488px' }}
             />
           </div>
         </div>
