@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Inika } from 'next/font/google';
 
 function Navbar1() {
   const [showAccountDropdown, setShowAccountDropdown] = useState(false);
@@ -34,19 +35,19 @@ function Navbar1() {
           </a>
 
           <div className="navbar-brand" aria-current="page">
-            <Link href="/electronics" style={{ color: 'black', marginLeft: "20px" }}>Electronics</Link>
+            <Link href="/electronics" style={{ color: 'blue', marginLeft: "20px",fontFamily:'Inika',textDecoration: 'none' }}>Electronics</Link>
           </div>
 
           <div className="navbar-brand" aria-current="page">
-            <Link href="/jewellery" style={{ color: 'black' }}>Jewellery</Link>
+            <Link href="/jewellery" style={{ color: 'blue',fontFamily:'Inika',textDecoration: 'none' }}>Jewellery</Link>
           </div>
 
           <div className="navbar-brand" aria-current="page">
-            <Link href="/mans_cloths" style={{ color: 'black' }}>Mans_Cloths</Link>
+            <Link href="/mans_cloths" style={{ color: 'blue',fontFamily:'Inika',textDecoration: 'none' }}>Mans_Cloths</Link>
           </div>
 
-          <div className="navbar-brand" aria-current="page">
-            <Link href="/womans_cloths" style={{ color: 'black' }}>Womans_Cloths</Link>
+          <div className="navbar-brand" >
+            <Link href="/womans_cloths" style={{ color: 'blue',fontFamily:'Inika',textDecoration: 'none' }}>Womans_Cloths</Link>
           </div>
 
           <div className="d-flex">
@@ -56,76 +57,29 @@ function Navbar1() {
                 placeholder="Search"
                 aria-label="Search"
                 style={{
-                  height: "60px",
-                  width: "500px",
-                  marginLeft: "120px"
+                  height: "44px",
+                  width: "321px",
+                  marginLeft: "850px"
                 }}
               ></input>
-              <button type='submit'>Submit</button>
+              <button >
+                <img
+                src="https://cdn.pixabay.com/photo/2017/01/13/01/22/magnifying-glass-1976105_960_720.png"
+                style={{ width: "15px", height: '5', color: 'blue' }}
+                alt="Cart Icon"
+              /></button>
             </form>
           </div>
 
-          {/* <div className="navbar-brand" aria-current="page">
-            <div className="dropdown">
-              <a
-                className="dropdown-toggle"
-                href="#"
-                role="button"
-                id="accountDropdown"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                style={{ color: 'black', marginLeft: "300px" }}
-                onClick={toggleAccountDropdown}
-              >
-                My Account
-              </a>
-
-              <ul
-                className={`dropdown-menu ${showAccountDropdown ? 'show' : ''}`}
-                aria-labelledby="accountDropdown"
-                style={{ marginLeft: "100px" }}
-              >
-                <li><Link href="/my_account">Profile</Link></li>
-                <li><Link href="/my_orders">My Orders</Link></li>
-                <li><Link href="/logout">Logout</Link></li>
-              </ul>
-            </div>
-          </div>
 
           <div className="navbar-brand" aria-current="page">
-            <div className="dropdown">
-              <a
-                className="dropdown-toggle"
-                href="#"
-                role="button"
-                id="moreDropdown"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                style={{ color: 'black', marginLeft: "10px" }}
-                onClick={toggleMoreDropdown}
-              >
-                More
-              </a>
-
-              <ul
-                className={`dropdown-menu ${showMoreDropdown ? 'show' : ''}`}
-                aria-labelledby="moreDropdown"
-              >
-                <li><Link href="/category1">Category 1</Link></li>
-                <li><Link href="/category2">Category 2</Link></li>
-                <li><Link href="/category3">Category 3</Link></li>
-              </ul>
-            </div>
-          </div> */}
-
-          <div className="navbar-brand" aria-current="page">
-            <Link href="/add_cart" style={{ color: 'black' }}>
+            <Link href="/add_cart" style={{ color: 'blue', fontFamily:'Inika' }}>
               <img
-                src="https://assets.dryicons.com/uploads/icon/preview/2664/small_1x_shopping_cart.png"
+                src="https://png.pngtree.com/element_our/20190528/ourlarge/pngtree-shopping-cart-icon-image_1166717.jpg"
                 style={{ width: "40px" }}
                 alt="Cart Icon"
               />
-              Cart
+              My Cart
             </Link>
           </div>
         </div>
