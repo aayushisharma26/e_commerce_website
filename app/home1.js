@@ -31,28 +31,18 @@ function Home() {
       <>
         <Cursal/>
         {Object.keys(categories).map((category) => (
-          <div key={category} className="row mb-4" style={{ border: '1px solid black', borderRadius: '8px' }}>
+          <div key={category} className="row mb-4" style={{ width: '1905px',borderRadius: '8px',  margin:"auto"  }}
+>
             {categories[category].map((item) => (
               <div key={item.id} className="col-md-3 mb-4 "  >
-                <div style={{ height: '560px', borderRadius: '8px', border: '1px solid black' }}>
+                <div style={{ width:'450', height: '560px', borderRadius: '5px',border:" solid #E5E1DA"}}>
                   <Link href={`/product/${item.id}`} passHref>
-                    {/* <a> */}
                       <img
                         src={item.image}
                         alt={item.title}
                         style={{ width: '350px', height: '350px', borderRadius: '8px' }}
                       />
-                    {/* </a> */}
                   </Link>
-                  {/* <Link href={`/product_list/${category}`}>
-                    
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        style={{ width: '350px', height: '300px', borderRadius: '8px' }}
-                      />
-                    
-                  </Link> */}
                   <div className="p-3">
                     <h6>{item.title}</h6>
                     <p>Price: ${item.price}</p>

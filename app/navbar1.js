@@ -20,13 +20,6 @@ function Navbar1() {
     <nav className="navbar .bg-light" data-bs-theme="white">
       <div className="container-fluid" style={{ height: "60px" }}>
         <div className="d-flex align-items-center">
-          {/* <img
-            // src="https://img.freepik.com/premium-psd/3d-rendering-small-letter-e-with-modern-style_446595-7218.jpg?w=2000"
-            src="https://www.figma.com/file/e5Qdw2m4b9GkkXD2lxqs77/_share---Navgurukul%40E-commerce-Project?type=design&node-id=0-438&mode=design&t=07PW4mWlSOKv5smf-4"
-            alt="Logo"
-            style={{ width: "50px", height: "50px", marginLeft: "20px" }}
-          />
- */}
           <a href="/your-link-url">
             <svg width="57" height="56" viewBox="0 0 57 56" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="0.5" width="56" height="56" rx="28" fill="#FBE9A9"/>

@@ -29,10 +29,10 @@ function ElectronicProducts() {
         <div className='elec' key={product.id} 
         >
     
-          <div style={{ width: '700px', height: '600px'}}>
+          <div style={{ width: '600px', height: '600px'}}>
             <img
               src={product.image}
-              style={{ width: '450px', height: '500px', borderRadius: '8px' ,marginLeft:"300px",marginTop:"40px",display: 'block'}}
+              style={{ width: '400px', height: '500px', borderRadius: '8px' ,marginLeft:"300px",marginTop:"40px",display: 'block'}}
             />
           </div>
           <div style={{  width: "300px", height: "180px", padding: '20px' ,marginRight:"900px", textAlign: 'center' ,border:"solid 2px red"}}>
