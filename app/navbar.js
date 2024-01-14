@@ -1,7 +1,6 @@
-"use client"
+"use client";
 import Link from 'next/link';
 import { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Inika } from 'next/font/google';
 
 function Navbar() {
