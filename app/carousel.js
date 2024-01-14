@@ -2,7 +2,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function Cursal() {
+function Carousel() {
   return (
     <>
       <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">

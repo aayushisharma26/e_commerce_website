@@ -4,7 +4,7 @@ import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Inika } from 'next/font/google';
 
-function Navbar1() {
+function Navbar() {
   const [showAccountDropdown, setShowAccountDropdown] = useState(false);
   const [showMoreDropdown, setShowMoreDropdown] = useState(false);
 
@@ -81,4 +81,4 @@ function Navbar1() {
   );
 }
 
-export default Navbar1;
+export default Navbar;
