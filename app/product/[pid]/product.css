@@ -1,0 +1,28 @@
+/* styles.css */
+
+.container {
+    display: flex;
+    align-items: center; 
+    /* border: 1px solid red;  */
+    /* padding: 5px;  */
+}
+  
+.imagee {
+    /* border-right: 1px solid red;  */
+    width: 579px;
+    height: 592.29px;
+    
+}
+  
+.imagee img {
+    height: 300px;
+    width: 300px;
+}
+  
+.data {
+    /* margin-left: 10px;  */
+    height: Hug (424.05px);
+    width: 461px;
+    margin-top: -388px;
+  }
+  
