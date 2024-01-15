@@ -33,16 +33,16 @@ function Page() {
       <>
         <Carousel/>
         {Object.keys(categories).map((category) => (
-          <div key={category} className="row mb-4" style={{ width: '1905px',borderRadius: '8px',  margin:"auto"  }}
+          <div key={category} className="row mb-4" id="carousel"
 >
             {categories[category].map((item) => (
               <div key={item.id} className="col-md-3 mb-4 "  >
-                <div style={{ width:'450', height: '560px', borderRadius: '5px',border:" solid #E5E1DA"}}>
+                <div className='product' >
                   <Link href={`/product/${item.id}`} passHref>
                       <img
                         src={item.image}
                         alt={item.title}
-                        style={{ width: '350px', height: '350px', borderRadius: '8px' }}
+                        id="image"
                       />
                   </Link>
                   <div className="p-3">
@@ -66,3 +66,6 @@ function Page() {
 }
 
 export default Page;
+
+
+
