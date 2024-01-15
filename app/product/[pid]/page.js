@@ -29,9 +29,9 @@ function Page({ params }) {
 
 
   const addCart=()=>{
-    // Cookies.set("alima","usmani")
+    Cookies.set("poooja","binjawa")
     // Cookies.set(productDetails,true)
-    Cookies.set(`product_${productDetails.id}`, JSON.stringify(productDetails));
+    // Cookies.set(`product_${productDetails.id}`, JSON.stringify(productDetails));
 
   }
   return (
@@ -43,7 +43,9 @@ function Page({ params }) {
       />
       <p>Product ID: {productDetails.id}</p>
       <p>Title: {productDetails.title}</p>
-      <button  className="btn btn-success" onClick={()=>addCart(productDetails)}>ADD TO CART</button>
+      <button  className="btn btn-success" >ADD TO CART</button>
+
+      {/* <button  className="btn btn-success" onClick={()=>addCart(productDetails)}>ADD TO CART</button> */}
       <button  className="btn btn-success" >BUT NOW</button>
 
 
