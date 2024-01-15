@@ -14,7 +14,8 @@
 #container{
     border: solid 2px red;
     width: 100%;
-    margin-top: 300px;
+    margin-top: 130px;
+    margin-bottom: 90px;
 
     
 }
@@ -43,4 +44,7 @@
 
 }
 
-
+.filter{
+    border: solid 2px red;
+    margin-bottom: 40px;
+}

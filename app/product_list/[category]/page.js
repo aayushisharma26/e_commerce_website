@@ -52,6 +52,7 @@ export default function ProductList({ params }) {
       <div className="container-fluid" id="container">
         <div className="row">
           <nav id="sidebar" className="col-md-3">
+            
             <div className="mb-3">
               <label htmlFor="minPrice">Min Price:</label>
               <input
@@ -74,15 +75,13 @@ export default function ProductList({ params }) {
               Apply Filter
             </button>
           </nav>
-
           <main role="main" className="col-md-9 ml-sm-auto col-lg-9">
-            <h1>Product List - {params.category}</h1>
             <div className="row">
               {categoryProducts.map((product) => (
                 <div key={product.id} className="col-md-4 mb-4">
                   <div className="electronics_image">
                     <Link href={`/product/${product.id}`} passHref>
-                      <img src={product.image} alt={product.title} id="image" />
+                      <img src={product.image}id="image" />
                     </Link>
                     <p>Price: ${product.price}</p>
                     <p>ID: {product.id}</p>
