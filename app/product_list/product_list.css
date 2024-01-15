@@ -1,0 +1,46 @@
+.carousel{
+    border: solid #3F0DA9;
+    background-color: #3F0DA9;
+    height:200px;
+    width:100%;
+
+
+}
+.category{
+    margin:60px;
+    color: #E5E1DA;
+
+}
+#container{
+    border: solid 2px red;
+    width: 100%;
+    margin-top: 300px;
+
+    
+}
+
+#sidebar{
+    border: solid 2px red;
+
+}
+
+.electronics_image{
+    border:solid #E5E1DA;
+    border-radius: 10px;
+    width: 400px;
+    height: 500px;
+    margin-top: 10px;
+    
+
+
+
+}
+#image{
+    width: 390px;
+    height: 350px;
+    border-radius: 8px;
+
+
+}
+
+

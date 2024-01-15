@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Cookies from 'js-cookie';
 
 function Page({ params }) {
@@ -29,9 +28,15 @@ function Page({ params }) {
 
 
   const addCart=()=>{
+<<<<<<< HEAD
     Cookies.set("poooja","binjawa")
     // Cookies.set(productDetails,true)
     // Cookies.set(`product_${productDetails.id}`, JSON.stringify(productDetails));
+=======
+  
+    
+    Cookies.set(`product_${productDetails.id}`, JSON.stringify(productDetails));
+>>>>>>> b0a0f2e7019fbab2cc99b32d4a46925f8a544d0d
 
   }
   return (
@@ -43,10 +48,15 @@ function Page({ params }) {
       />
       <p>Product ID: {productDetails.id}</p>
       <p>Title: {productDetails.title}</p>
+<<<<<<< HEAD
       <button  className="btn btn-success" >ADD TO CART</button>
 
       {/* <button  className="btn btn-success" onClick={()=>addCart(productDetails)}>ADD TO CART</button> */}
       <button  className="btn btn-success" >BUT NOW</button>
+=======
+      <button  className="btn btn-success" onClick={()=>addCart(productDetails)}>ADD TO CART</button>
+      <button  className="btn btn-success" >BUY NOW</button>
+>>>>>>> b0a0f2e7019fbab2cc99b32d4a46925f8a544d0d
 
 
     </div>

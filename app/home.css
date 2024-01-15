@@ -1,0 +1,19 @@
+#carousel{
+    width: 1905px;
+    border-radius: 8px;
+    margin:auto;
+}
+
+.product{
+    width:450;
+    height:560px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;   
+}
+
+/* style={{  }}*/
+#image{
+    width:350px;
+    height:350px;
+    border-radius:8px;
+}

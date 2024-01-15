@@ -1,7 +1,7 @@
-"use client"
-import React, { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Link from 'next/link';
+"use client";
+import '../product_list.css';
+import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function ProductList({ params }) {
   const [categoryProducts, setCategoryProducts] = useState([]);
@@ -44,73 +44,55 @@ export default function ProductList({ params }) {
   }
 
   return (
-    <div className="container-fluid">
-      <div className="row">
-        {/* Sidebar */}
-        <nav id="sidebar" className="col-md-3" style={{ border: "red 2px solid" }}>
-          <div className="mb-3">
-            <label htmlFor="minPrice" className="form-label">
-              Min Price:
-            </label>
-            <input
-              type="number"
-              className="form-control"
-              id="minPrice"
-              value={minPrice}
-              onChange={(e) => setMinPrice(e.target.value)}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="maxPrice" className="form-label">
-              Max Price:
-            </label>
-            <input
-              type="number"
-              className="form-control"
-              id="maxPrice"
-              value={maxPrice}
-              onChange={(e) => setMaxPrice(e.target.value)}
-            />
-          </div>
-          <button className="btn btn-primary" onClick={applyFilter}>
-            Apply Filter
-          </button>
-        </nav>
+    <div className='carousel'>
+      <div className='category'>
+        <h2>CATEGORY /PRODUCT NAME</h2>
+        <h3>Crafted Elegance: Artisanal Wooden Furniture</h3>
+      </div>
+      <div className="container-fluid" id="container">
+        <div className="row">
+          <nav id="sidebar" className="col-md-3">
+            <div className="mb-3">
+              <label htmlFor="minPrice">Min Price:</label>
+              <input
+                type="number"
+                className="form-control"
+                value={minPrice}
+                onChange={(e) => setMinPrice(e.target.value)}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="maxPrice">Max Price:</label>
+              <input
+                type="number"
+                className="form-control"
+                value={maxPrice}
+                onChange={(e) => setMaxPrice(e.target.value)}
+              />
+            </div>
+            <button className="btn btn-primary" onClick={applyFilter}>
+              Apply Filter
+            </button>
+          </nav>
 
-        {/* Main content */}
-        <main role="main" className="col-md-9 ml-sm-auto col-lg-9">
-          <h1>Product List - {params.category}</h1>
-          <div className="row">
-            {categoryProducts.map((product) => (
-              <div key={product.id} className="col-md-3 mb-4">
-                <div style={{ borderRadius: '8px', border: '1px solid black' }}>
-                  <Link href={`/product/${product.id}`} passHref>
-                    {/* <a> */}
-                      <img src={product.image} alt={product.title} style={{ width: '100px', height: '100px' }} />
-                      
-                    {/* </a> */}
-                  </Link>
-                  <div className="p-3">
-                    <h6>{product.title}</h6>
+          <main role="main" className="col-md-9 ml-sm-auto col-lg-9">
+            <h1>Product List - {params.category}</h1>
+            <div className="row">
+              {categoryProducts.map((product) => (
+                <div key={product.id} className="col-md-4 mb-4">
+                  <div className="electronics_image">
+                    <Link href={`/product/${product.id}`} passHref>
+                      <img src={product.image} alt={product.title} id="image" />
+                    </Link>
                     <p>Price: ${product.price}</p>
                     <p>ID: {product.id}</p>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </main>
+              ))}
+            </div>
+          </main>
+        </div>
       </div>
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
