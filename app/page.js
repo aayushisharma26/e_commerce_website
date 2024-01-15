@@ -6,7 +6,6 @@ import Carousel from './carousel';
 
 function Page() {
   const [data, setData] = useState([]);
-
   const fetchData = () => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
@@ -33,8 +32,7 @@ function Page() {
       <>
         <Carousel/>
         {Object.keys(categories).map((category) => (
-          <div key={category} className="row mb-4" id="carousel"
->
+          <div key={category} className="row mb-4" id="carousel">
             {categories[category].map((item) => (
               <div key={item.id} className="col-md-3 mb-4 "  >
                 <div className='product' >
@@ -61,10 +59,8 @@ function Page() {
       </>
     );
   };
-
   return <>{renderCategoryRows()}</>;
 }
-
 export default Page;
 
 
