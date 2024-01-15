@@ -1,5 +1,6 @@
 
 import React from 'react';
+import './carousel.css';
 
 function Carousel() {
   return (
@@ -8,7 +9,7 @@ function Carousel() {
         <div className="carousel-inner" style={{ border: 'solid 1px black' }}>
           <div className="carousel-item active" style={{height:"488px",width: '1200'}}>
             <img
-              src="https://cdn11.bigcommerce.com/s-5pywdu4iq7/images/stencil/original/carousel/409/mens_winter_sale_carousel.png?c=2"
+              src="https://img.freepik.com/free-psd/urban-fashion-banner-template_23-2148652498.jpg?w=1480&t=st=1705329912~exp=1705330512~hmac=b0ec8fc21d65020b26b822c5579f0354f2c14919f22a7aeae3134bedd0aa7b72"
               className="d-block w-100 img-fluid"
               alt="First slide"
               style={{ height: '488px' }}
@@ -24,7 +25,7 @@ function Carousel() {
           </div>
           <div className="carousel-item" style={{height:"488px",width: '1200'}}>
             <img
-              src="https://images.meesho.com/images/products/243061609/09ibc_512.webp"
+              src="https://www.fatbit.com/fab/wp-content/uploads/2015/03/Online-Jewelry-Shopping-Store-main.jpg"
               className="d-block w-100 img-fluid"
               alt="Third slide"
               style={{ height: '488px' }}
@@ -33,7 +34,7 @@ function Carousel() {
 
           <div className="carousel-item" style={{height:"488px",width: '1200'}}>
             <img
-              src="https://www.sliderrevolution.com/wp-content/uploads/2023/03/websites-with-carousels.jpg"
+              src="https://www.tutorialrepublic.com/snippets/designs/product-list-carousel-for-ecommerce-website.png"
               className="d-block w-100 img-fluid"
               alt="Third slide"
               style={{ height: '488px' }}
