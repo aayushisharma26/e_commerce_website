@@ -32,8 +32,17 @@ function Home() {
         {/* ... (your existing code) ... */}
         {Object.keys(categories).map((category) => (
           <div key={category} className="row mb-4" style={{ border: '1px solid black', borderRadius: '8px' }}>
+            
+          
             {categories[category].map((item) => (
+                
+                
+           
+              
               <div key={item.id} className="col-md-3 mb-4 "  >
+              
+      
+                
                 <div style={{ height: '560px', borderRadius: '8px', border: '1px solid black' }}>
                   <Link href={`/product/${item.id}`} passHref>
                     {/* <a> */}

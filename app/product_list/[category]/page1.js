@@ -49,6 +49,7 @@ export default function ProductList({ params }) {
         {/* Sidebar */}
         <nav id="sidebar" className="col-md-3" style={{ border: "red 2px solid" }}>
           <div className="mb-3">
+            
             <label htmlFor="minPrice" className="form-label">
               Min Price:
             </label>
@@ -83,15 +84,10 @@ export default function ProductList({ params }) {
           <div className="row">
             {categoryProducts.map((product) => (
               <div key={product.id} className="col-md-3 mb-4">
-                <div style={{ height:'500px', borderRadius: '8px', border: '1px solid black' }}>
+                <div style={{ borderRadius: '8px', border: '1px solid red',width:"400px" ,height:"400px"}}>
                   <Link href={`/product/${product.id}`} passHref>
-<<<<<<< HEAD
                     
-                      <img src={product.image} alt={product.title} style={{ width: '100px', height: '100px' }} />
-=======
-                    {/* <a> */}
                       <img src={product.image} alt={product.title} style={{ width: '300px', height: '300px' }} />
->>>>>>> aef8e544362ee77013916c224b488f82a9c26bc7
                       
                     
                   </Link>
