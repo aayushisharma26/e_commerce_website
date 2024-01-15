@@ -1,11 +1,12 @@
-"use client"
+"use client";
+import '../product_list.css';
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function ProductList({ params }) {
   const [categoryProducts, setCategoryProducts] = useState([]);
-  const [selectedPrice, setSelectedPrice] = useState('');
-  const [noProductsMessage, setNoProductsMessage] = useState('');
+  const [minPrice, setMinPrice] = useState('');
+  const [maxPrice, setMaxPrice] = useState('');
 
   const fetchCategoryProducts = () => {
     fetch(`https://fakestoreapi.com/products/category/${params.category}`)
@@ -28,15 +29,9 @@ export default function ProductList({ params }) {
       .then((res) => {
         const filteredProducts = res.filter(
           (product) =>
-            (!selectedPrice || product.price >= parseInt(selectedPrice, 10))
+            (minPrice === '' || product.price >= parseInt(minPrice, 10)) &&
+            (maxPrice === '' || product.price <= parseInt(maxPrice, 10))
         );
-
-        if (filteredProducts.length === 0) {
-          setNoProductsMessage('No products found in the selected price range.');
-        } else {
-          setNoProductsMessage('');
-        }
-
         setCategoryProducts(filteredProducts);
       })
       .catch((error) => {
@@ -44,82 +39,59 @@ export default function ProductList({ params }) {
       });
   };
 
-  const handleCheckboxChange = (value) => {
-    setSelectedPrice(value === selectedPrice ? '' : value);
-  };
-
-  const generatePriceCheckboxes = () => {
-    const checkboxes = [];
-    for (let i = 10; i <= 300; i += 10) {
-      checkboxes.push(
-        <div className="form-check" key={`price${i}`}>
-          <input
-            className="form-check-input"
-            type="checkbox"
-            id={`price${i}`}
-            checked={selectedPrice === `${i}`}
-            onChange={() => handleCheckboxChange(`${i}`)}
-          />
-          <label className="form-check-label" htmlFor={`price${i}`}>
-            Up to ${i}
-          </label>
-        </div>
-      );
-    }
-    return checkboxes;
-  };
+  if (!categoryProducts) {
+    return <div>Loading...</div>;
+  }
 
   return (
-    <div className="container-fluid" style={{ border: "solid 2px blue", width: "100%" }}>
-      <div className="row">
-        <nav id="sidebar" className="col-md-3" style={{ border: "red 2px solid" }}>
-          <div className="mb-3">
-            <h1 style={{ borderBottom: "solid 2px black" }}>Filter</h1>
-
+    <div className='carousel'>
+      <div className='category'>
+        <h2>CATEGORY /PRODUCT NAME</h2>
+        <h3>Crafted Elegance: Artisanal Wooden Furniture</h3>
+      </div>
+      <div className="container-fluid" id="container">
+        <div className="row">
+          <nav id="sidebar" className="col-md-3">
             <div className="mb-3">
-              <h4>Price Filters</h4>
-              {generatePriceCheckboxes()}
+              <label htmlFor="minPrice">Min Price:</label>
+              <input
+                type="number"
+                className="form-control"
+                value={minPrice}
+                onChange={(e) => setMinPrice(e.target.value)}
+              />
             </div>
-
+            <div className="mb-3">
+              <label htmlFor="maxPrice">Max Price:</label>
+              <input
+                type="number"
+                className="form-control"
+                value={maxPrice}
+                onChange={(e) => setMaxPrice(e.target.value)}
+              />
+            </div>
             <button className="btn btn-primary" onClick={applyFilter}>
               Apply Filter
             </button>
-          </div>
-        </nav>
+          </nav>
 
-        <main role="main" className="col-md-9 ml-sm-auto col-lg-9">
-          <h1 className="text-center">Product List - {params.category}</h1>
-
-          {noProductsMessage && (
-            <div className="alert alert-info" role="alert">
-              {noProductsMessage}
-            </div>
-          )}
-
-          {categoryProducts.reduce((rows, product, index) => {
-            if (index % 3 === 0) {
-              rows.push([]);
-            }
-            rows[rows.length - 1].push(product);
-            return rows;
-          }, []).map((row, rowIndex) => (
-            <div key={rowIndex} className="row" style={{ borderBottom: "solid 2px black" }}>
-              {row.map((product) => (
+          <main role="main" className="col-md-9 ml-sm-auto col-lg-9">
+            <h1>Product List - {params.category}</h1>
+            <div className="row">
+              {categoryProducts.map((product) => (
                 <div key={product.id} className="col-md-4 mb-4">
-                  <div style={{ borderRadius: '8px', width: "500px", height: "500px", textAlign: 'center' }}>
+                  <div className="electronics_image">
                     <Link href={`/product/${product.id}`} passHref>
-                      <img src={product.image} alt={product.title} style={{ width: '400px', height: '400px', marginTop: "40px" }} />
+                      <img src={product.image} alt={product.title} id="image" />
                     </Link>
-                    <div className="p-3" style={{ marginLeft: "100px" }}>
-                      <p>Price: ${product.price}</p>
-                      <p>ID: {product.id}</p>
-                    </div>
+                    <p>Price: ${product.price}</p>
+                    <p>ID: {product.id}</p>
                   </div>
                 </div>
               ))}
             </div>
-          ))}
-        </main>
+          </main>
+        </div>
       </div>
     </div>
   );
