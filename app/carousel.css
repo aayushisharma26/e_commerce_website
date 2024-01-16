@@ -1,16 +1,9 @@
-/* #active{
-    height:488px;
-    width: 1900px;
-    border: solid 1px black;
-}
-
-#image{
-    height: 350px; 
-}
-
 #item{
-    height:488px;
-    width: 1900px;
-    border: solid 1px black;
+    height: 488px;  
+    padding: 68px 0px;  
+}
 
-} */
+#carousel{
+    /* border: solid 1px red; */
+    border-radius: 15px;
+}

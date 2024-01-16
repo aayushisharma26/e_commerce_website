@@ -26,7 +26,8 @@
 .image{
     height:44px;
     width:321px;
-    margin-left:  850px;
+    margin-left:  275px;
+    color:lightgrey;
 }
 
 #cart{
@@ -35,3 +36,8 @@
  } 
 
 
+#navbar{
+    width:1280px;
+    margin: auto;
+    /* border: 1px solid red; */
+}
