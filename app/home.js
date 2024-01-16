@@ -1,11 +1,10 @@
-"use client";
-import './home.css';
 import React, { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'next/link';
-import Carousel from './carousel';
 
-function Page() {
+function Home() {
   const [data, setData] = useState([]);
+
   const fetchData = () => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
@@ -30,18 +29,27 @@ function Page() {
 
     return (
       <>
-        <Carousel/>
+        {/* ... (your existing code) ... */}
         {Object.keys(categories).map((category) => (
-          <div key={category} className="row mb-4" id="carousel">
+          <div key={category} className="row mb-4" style={{ border: '1px solid black', borderRadius: '8px' }}>
             {categories[category].map((item) => (
-              <div key={item.id} className="col-md-3 mb-4 "  >
-                <div className='product' >
-                  <Link href={`/product/${item.id}`} passHref>
+              <div key={item.id} className="col-md-3 mb-4">
+                <div style={{ borderRadius: '8px', border: '1px solid black' }}>
+                  {/* <Link href={`/product_list/${category}`} passHref>
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      style={{ width: '350px', height: '300px', borderRadius: '8px' }}
+                    />
+                  </Link> */}
+                  <Link href={`/product/${item.id}`}>
+                    
                       <img
                         src={item.image}
                         alt={item.title}
-                        id="image"
+                        style={{ width: '350px', height: '300px', borderRadius: '8px' }}
                       />
+                    
                   </Link>
                   <div className="p-3">
                     <h6>{item.title}</h6>
@@ -59,9 +67,8 @@ function Page() {
       </>
     );
   };
+
   return <>{renderCategoryRows()}</>;
 }
-export default Page;
 
-
-
+export default Home;
