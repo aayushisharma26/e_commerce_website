@@ -1,0 +1,9 @@
+.page-header {
+    background-color: #3F0DA9;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    color: #FBE9A9;
+    font-size: 36px;
+    padding: 40px 120px;
+    margin-bottom: 80px;
+}

@@ -1,0 +1,9 @@
+#item{
+    height: 488px;  
+    padding: 68px 0px;  
+}
+
+#carousel{
+    /* border: solid 1px red; */
+    border-radius: 15px;
+}

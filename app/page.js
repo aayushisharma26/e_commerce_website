@@ -25,26 +25,26 @@ function Page() {
     const categories = {
       electronics: data.filter((item) => item.category === "electronics").slice(0, 4),
       jewelery: data.filter((item) => item.category === "jewelery").slice(0, 4),
-      "women's clothing": data.filter((item) => item.category === "women's clothing").slice(0, 4),
+      womens_clothing: data.filter((item) => item.category === "women's clothing").slice(0, 4),
     };
 
     return (
       <>
         <Carousel/>
         {Object.keys(categories).map((category) => (
-          <div key={category} className="row mb-4" id="carousel">
+          <div key={category} className="row mb-4" id="category">
             {categories[category].map((item) => (
               <div key={item.id} className="col-md-3 mb-4 "  >
                 <div className='product' >
                   <Link href={`/product/${item.id}`} passHref>
                       <img
                         src={item.image}
-                        alt={item.title}
+                        // alt={item.title}
                         id="image"
                       />
                   </Link>
                   <div className="p-3">
-                    <h6>{item.title}</h6>
+                    {/* <h6>{item.title}</h6> */}
                     <p>Price: ${item.price}</p>
                     <p>ID: {item.id}</p>
                   </div>
