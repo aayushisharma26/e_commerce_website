@@ -39,12 +39,10 @@ function Page() {
                   <Link href={`/product/${item.id}`} passHref>
                       <img
                         src={item.image}
-                        // alt={item.title}
                         id="image"
                       />
                   </Link>
                   <div className="p-3">
-                    {/* <h6>{item.title}</h6> */}
                     <p>Price: ${item.price}</p>
                     <p>ID: {item.id}</p>
                   </div>

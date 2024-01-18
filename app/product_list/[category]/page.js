@@ -45,10 +45,8 @@ export default function ProductList({ params }) {
 
   return (
     <div className='carousel'>
-      <div className='category'>
-        <h2>CATEGORY /PRODUCT NAME</h2>
-        <h3>Crafted Elegance: Artisanal Wooden Furniture</h3>
-      </div>
+        <div className='text'>CATEGORY /PRODUCT NAME</div>
+        <div className='text_1'>Crafted Elegance: Artisanal Wooden Furniture</div>
       <div className="container-fluid" id="container">
         <div className="row">
           <nav id="sidebar" className="col-md-3">
@@ -75,8 +73,8 @@ export default function ProductList({ params }) {
               Apply Filter
             </button>
           </nav>
-          <main role="main" className="col-md-9 ml-sm-auto col-lg-9">
-            <div className="row">
+          <main role="main" className="col-md-9 ml-sm-auto col-lg-9" id="list_home">
+            <div className="row" >
               {categoryProducts.map((product) => (
                 <div key={product.id} className="col-md-4 mb-4">
                   <div className="electronics_image">

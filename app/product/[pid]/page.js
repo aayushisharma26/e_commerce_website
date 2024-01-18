@@ -107,22 +107,6 @@ function Page({ params }) {
       </div>
     </div>
   
-
-
-
-    // <div className='container'>
-    //   <h1>Product Details-</h1>
-    //   <img
-    //     src={productDetails.image}
-    //     style={{ width: '350px', height: '300px', borderRadius: '8px' }}
-    //   />
-    //   <p>Product ID: {productDetails.id}</p>
-    //   <p>Title: {productDetails.title}</p>
-    //   <button  className="btn btn-success" onClick={()=>addCart(productDetails)}>ADD TO CART</button>
-    //   <button  className="btn btn-success" >BUY NOW</button>
-
-
-    // </div>
   );
 }
 
