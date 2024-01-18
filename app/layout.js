@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import Navbar from './navbar'
+import Footer from './footer'
 import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -18,6 +19,9 @@ export default function RootLayout ({ children }) {
         <div className='container'>
           <Navbar />
           {children}
+        </div>
+        <div className='container-fluid'>
+          <Footer/>
         </div>
       </body>
     </html>

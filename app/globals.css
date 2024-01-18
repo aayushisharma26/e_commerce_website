@@ -1,8 +1,10 @@
-@media (min-width: 1280px) {
+@media (min-width: 1680px) {
     .container {
-        max-width: 1280px;
-        padding: 0px;
+        max-width: 1600px;
     }
 }
 
+.container, .container-fluid {
+    padding: 0px;
+}
 
