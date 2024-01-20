@@ -2,11 +2,11 @@ import './cart.css';
 
 function Cart_item () {
   return (
-    <div className='row'>
-      <div className='col-3'>
+    <div className='cart-item'>
+      <div className='img-container'>
         <img src='chair.png' />
       </div>
-      <div className='col-9'>
+      <div className='product-detail'>
         <div class='row justify-content-between'>
           <div class='col-4'>
             <div>Chair Wood</div>

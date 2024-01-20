@@ -3,7 +3,13 @@
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
     color: #FBE9A9;
-    font-size: 36px;
     padding: 40px 120px;
     margin-bottom: 80px;
+}
+
+.heading {
+    font-size: 36px;
+}
+.desc {
+    font-size: 20px;
 }
