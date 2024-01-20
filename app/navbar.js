@@ -34,10 +34,10 @@ function Navbar () {
             <span class='navbar-toggler-icon'></span>
           </button>
           <div class='collapse navbar-collapse' id='navbarSupportedContent'>
-            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
-              <li class='nav-item'>
+            <ul class='navbar-nav me-auto mb-2 mb-lg-0 ' id="product">
+              <li class='nav-item '>
                 <a
-                  class='nav-link'
+                  class='nav-link '
                   aria-current='page'
                   href='/product_list/electronics'
                 >
@@ -71,7 +71,7 @@ function Navbar () {
                 Search
               </button>
             </form>
-            <Link href='/add_cart' id='cart'>
+            <Link href='/cart'>
               <img src='/Cart.png' />
               My Cart
             </Link>
