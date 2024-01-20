@@ -1,11 +1,4 @@
-#electronics{
-    color:blue;
-    margin-left:20px;
-    font-family:Inika;
-    text-decoration:none;
-}
-
-#jewellery{
+#product{
     color:blue;
     font-family:Inika;
     text-decoration:none;
@@ -30,7 +23,7 @@
     color:lightgrey;
 }
 
-#cart{
+#text{
     color:blue;
     font-family:Inika;
  } 

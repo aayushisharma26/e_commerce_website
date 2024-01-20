@@ -1,0 +1,14 @@
+.style{
+    background-Color: blue;
+    height: 230px;
+    padding:38px 0 0 40px ;
+}
+
+.text{
+    font-size: 28px;
+    line-height: 120%;
+    font-style: normal;
+    color:#FBE9A9;
+    font-family: Inika;
+    font-weight: 700;
+}
